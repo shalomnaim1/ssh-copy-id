@@ -18,6 +18,11 @@ def main():
     swap_keys(args.ip, args.username, args.password)
 
 def validate_params(args):
+    """
+    This function validate the input parameters
+    :param args: input parameters
+    :return: is valid (True or False)
+    """
     is_valid = True
 
     try:
@@ -31,6 +36,14 @@ def validate_params(args):
         return is_valid
 
 def swap_keys(ip, username, password):
+    """
+    This function acctially do the key swap
+    :param ip: Remote server ip
+    :param username: user for remote server
+    :param password: password for remote server
+    :return: None
+    """
+    
     console = pexpect.spawn("ssh-copy-id {user}@{ip}".format(user=username, ip=ip))
     console.logfile = sys.stdout
     console.expect(" (yes/no)?")
