@@ -5,7 +5,7 @@ import argparse
 import sys
 
 def main():
-    parser = argparse.ArgumentParser(description='Ansible inventory creator')
+    parser = argparse.ArgumentParser(description='SSH passwordless')
     parser.add_argument('--ip', action='store', dest="ip", help="IP address of target server")
     parser.add_argument('--username', action='store', default="root", dest="username", help="username of target server")
     parser.add_argument('--password', action='store', dest="password", help="password of target server")
